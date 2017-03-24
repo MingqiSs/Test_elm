@@ -49,13 +49,13 @@
 
 <style lang="stylus" rel="stylesheet/stylus">
      .tab
-      display:flex
-      width:100%
-      line-height: 40px
-      border-bottom:1px solid rgba(7,17,27,0.1)
-      .tab-item
-        flex:1
-        text-align:center
-       .active
-         color:red           
+        display:flex
+        width:100%
+        line-height: 40px
+        border-bottom:1px solid rgba(7,17,27,0.1)
+        .tab-item
+          flex:1
+          text-align:center
+        .active
+          color:red  
 </style>
