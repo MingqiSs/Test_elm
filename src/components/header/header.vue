@@ -17,7 +17,7 @@
               <span class="text">{{seller.supports[0].description}}</span>
         </div>
       </div>
-      <div class="support-count" v-if="seller.supports" @click="isshowdetali()">
+      <div class="support-count" v-if="seller.supports"  @click="isshowdetali()">
         <span class="count">{{seller.supports.length}}</span>
         <i class="icon-keyboard_arrow_right"></i>
       </div>
@@ -35,12 +35,29 @@
              <div class="main">
                   <h1 class="name">{{seller.name}}</h1>
              </div>
-             <div class="star">
-                 <star :size="24" :score="score"></star>
-             </div>
+               <star :size="48" :score="seller.score"></star>
+              <div class="title">
+                <div class="line"></div>
+                <div class="text">优惠信息</div>
+                <div class="line"></div>
+            </div>
+           <ul class="supports">
+            <li class="support-item" v-for="item in seller.supports">
+              <span class="icon "></span>
+              <span class="text">{{item.type+1}}:{{item.description}}</span>
+              </li>
+        </ul>
+         <div class="title">
+                <div class="line"></div>
+                <div class="text">商家公共</div>
+                <div class="line"></div>
+        </div>
+        <div class="bulletin">
+          <p class="content">{{seller.bulletin}}</p>
+        </div>
         </div>
         <div class="detali-close" @click="isshowdetali()">
-        <i class="icon-close">关闭</i>
+        <i class="icon-close">&Chi;</i>
         </div>
     </div>
 </div>
@@ -175,7 +192,6 @@
                 -webkit-backdrop-filter: blur(10px);
                 backdrop-filter: blur(10px);
                 .detali-wrapper
-                        position: relative;
                         display: inline-block;
                         width: 100%;
                         min-height: 100%;
@@ -184,6 +200,43 @@
                            padding-bottom: 64px;
                            .name
                                text-align:center
+                        .title
+                          display: flex;
+                          width: 80%;
+                          margin: 28px auto 24px auto
+                          .line      
+                            -webkit-box-flex: 1;
+                            -ms-flex: 1;
+                            flex: 1;
+                            position: relative;
+                            top: -6px;
+                            border-bottom: 1px solid rgba(255,255,255,0.2);
+                         .supports
+                           width: 80%;
+                           margin: 0 auto;
+                           .support-item
+                              padding: 0 12px;
+                              margin-bottom: 12px;
+                              font-size: 0;
+                              .icon 
+                                display: inline-block;
+                                width: 16px;
+                                height: 16px;
+                                vertical-align: top;
+                                margin-right: 6px;
+                                background-size: 16px 16px;
+                                background-repeat: no-repeat;
+                              .text
+                                line-height: 16px;
+                                font-size: 12px;
+                          .bulletin
+                             width: 80%;
+                             margin: 0 auto; 
+                             .content 
+                               padding: 0 12px;
+                               line-height: 24px;
+                               font-size: 12px;
+
                 .detali-close
                         position: relative;
                         width: 32px;

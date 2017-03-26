@@ -30,7 +30,9 @@ module.exports = {
   //对象字面量中冒号的前后空格 比如可以使用v-header
     'key-spacing': [0, { "beforeColon": false, "afterColon": true }],
     "eqeqeq": "off", //off = 0
-   'no-return-assign':0
+   'no-return-assign':0,"space-before-blocks": [0, "always"],
+   
+    'space-before-blocks': [0, "always"],
     
   }
 }
